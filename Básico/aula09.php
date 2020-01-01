@@ -6,6 +6,15 @@
 
     echo "</p>";
 
+    // Laço foreach para pecorrer um array
+    $jogadores = [1 => "Cristiano Ronaldo", 2 =>"Messi", 3 => "Neymar"];
+
+    foreach ($jogadores as $indice => $jogador){
+        echo $indice." -> "."$jogador<br>";
+    }
+
+    echo "</p>";
+
     // Arrays Multidimensionais
     $times = array("cariocas"=>array("Botafogo", "Vasco", "Flamengo"),
                    "paulistas"=>array("Corinthians", "Santos", "Palmeiras"));
