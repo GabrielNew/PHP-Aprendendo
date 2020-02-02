@@ -4,6 +4,10 @@ class Login {
     private $email;
     private $senha;
 
+    public function __construct(){
+        
+    }
+
     public function Logar() {
         if ($this->email == "trunks@gmail.com" and $this->senha == "123456") {
             echo "Logado";
