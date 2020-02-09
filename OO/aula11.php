@@ -10,7 +10,7 @@ interface Crud {
 class Sistema implements Crud {
     // Temos agora que implementar todos os métodos da interface
 
-    public function criar() {
+    public function criar($nome) {
         echo "Criando um Sistema";
     }
 
