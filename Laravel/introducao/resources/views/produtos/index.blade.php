@@ -2,7 +2,7 @@
 @section('title','Produtos')
 @section('content')
 <div class="container">
-<a href="produtos/inserir" type="button" class="mt-4 mb-4 btn btn-primary">Inserir Produto</a>
+<a href="{{route('produtos.inserir')}}" type="button" class="mt-4 mb-4 btn btn-primary">Inserir Produto</a>
 <table>
 <thead>
             <tr>
@@ -18,7 +18,9 @@
                 <td>{{$produto->nome}}</td>
                 <td>{{$produto->valor}}</td>
                 <td>{{$produto->estoque}}</td>
-                <td></td>
+                <td>
+                    <a href="{{route('produtos.descricao', $produto->id)}}"><i class="fas fa-eye text-primary"></i></a>
+                </td>
             </tr>
         @endforeach
         </tbody>

@@ -6,8 +6,10 @@ use App\Http\Controllers\ProdutosController;
 
 Route::get('/', HomeController::class);
 
-Route::get('produtos/inserir', [ProdutosController::class, 'create']);
+Route::get('produtos/inserir', [ProdutosController::class, 'create'])->name('produtos.inserir');
 
-Route::get('produtos/{nome}/{preco?}', [ProdutosController::class, 'show']);
+Route::get('produtos/{id}', [ProdutosController::class, 'show'])->name('produtos.descricao');
 
-Route::get('produtos', [ProdutosController::class, 'index']);
+//Route::get('produtos/{nome}/{preco?}', [ProdutosController::class, 'show'])->name('produtos.descricao');
+
+Route::get('produtos', [ProdutosController::class, 'index'])->name('produtos');

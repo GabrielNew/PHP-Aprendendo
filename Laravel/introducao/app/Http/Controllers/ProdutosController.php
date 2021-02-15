@@ -16,7 +16,11 @@ class ProdutosController extends Controller {
         return view('produtos.create');
     }
 
-    public function show($nome, $preco = null){
-        return view('produtos.show', ['nome' => $nome, 'preco' => $preco]);
+    public function show($id){
+        return view('produtos.show',['id' => $id]);
     }
+
+    // public function show($nome, $preco = null){
+    //     return view('produtos.show', ['nome' => $nome, 'preco' => $preco]);
+    // }
 }
