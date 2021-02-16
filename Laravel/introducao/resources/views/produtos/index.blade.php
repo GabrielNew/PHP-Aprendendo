@@ -20,6 +20,8 @@
                 <td>{{$produto->estoque}}</td>
                 <td>
                     <a href="{{route('produtos.descricao', $produto->id)}}"><i class="fas fa-eye text-primary"></i></a>
+                    <a href="{{route('produtos.descricao', $produto->id)}}"><i class="fas fa-edit text-info"></i></a>
+                    <a href="{{route('produtos.descricao', $produto->id)}}"><i class="fas fa-trash text-danger"></i></a>
                 </td>
             </tr>
         @endforeach
