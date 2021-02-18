@@ -16,6 +16,10 @@ class ProdutosController extends Controller {
         return view('produtos.create');
     }
 
+    public function insert(){
+
+    }
+
     public function show($id){
         $produto = Produto::find($id);
         return view('produtos.show',['produto' => $produto]);

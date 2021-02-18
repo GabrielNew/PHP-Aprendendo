@@ -13,3 +13,5 @@ Route::get('produtos/{id}', [ProdutosController::class, 'show'])->name('produtos
 //Route::get('produtos/{nome}/{preco?}', [ProdutosController::class, 'show'])->name('produtos.descricao');
 
 Route::get('produtos', [ProdutosController::class, 'index'])->name('produtos');
+
+Route::post('produtos',[ProdutosController::class, 'insert'])->name('produtos.insert');
