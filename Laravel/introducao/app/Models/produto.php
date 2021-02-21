@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class produto extends Model
 {
-    public $timestamps = true; // teste
+    public $timestamps = false;
     use HasFactory;
 }
