@@ -45,6 +45,10 @@ class ProdutosController extends Controller {
         return redirect()->route('produtos');
     }
 
+    public function delete(produto $produto){
+        return 'teste';
+    }
+
     // public function show($nome, $preco = null){
     //     return view('produtos.show', ['nome' => $nome, 'preco' => $preco]);
     // }

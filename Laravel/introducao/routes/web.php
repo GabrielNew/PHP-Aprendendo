@@ -19,3 +19,5 @@ Route::post('produtos',[ProdutosController::class, 'insert'])->name('produtos.in
 Route::get('produtos/{produto}/edit', [ProdutosController::class, 'edit'])->name('produtos.edit');
 
 Route::put('produtos/{produto}',[ProdutosController::class, 'editar'])->name('produtos.editar');
+
+Route::delete('produtos/{produto}',[ProdutosController::class, 'delete'])->name('produtos.delete');
