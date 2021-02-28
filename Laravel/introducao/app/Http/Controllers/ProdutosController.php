@@ -36,7 +36,6 @@ class ProdutosController extends Controller {
     }
 
     public function editar(Request $request, produto $produto){
-        $produto = new Produto();
         $produto->nome = $request->nome;
         $produto->valor = $request->valor;
         $produto->estoque = $request->estoque;

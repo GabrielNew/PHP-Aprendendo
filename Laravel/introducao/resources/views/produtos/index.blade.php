@@ -2,7 +2,12 @@
 @section('title','Produtos')
 @section('content')
 <div class="container">
-<a href="{{route('produtos.inserir')}}" type="button" class="mt-4 mb-4 btn btn-primary">Inserir Produto</a>
+<div class="card shadow mb-4">
+
+<div class="card-body">
+  <div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <a href="{{route('produtos.inserir')}}" type="button" class="mt-4 mb-4 btn btn-primary">Inserir Produto</a>
 <table>
 <thead>
             <tr>
@@ -30,8 +35,11 @@
     <!-- @foreach($produtos as $produto)
     <p>{{$produto->nome}}</p>
     @endforeach -->
-
     {{$produtos->links()}}
+</div>
+</div>
+</div>
+
 </div>
 
 <!-- Modal -->
@@ -50,10 +58,26 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-danger">Excluir</button>
+            <form action="{{route('produtos.delete', $produto)}}" method="post">
+                @method('delete')
+                @csrf
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </form>
         </div>
         </div>
     </div>
     </div>
 </div>
+
+<?php
+  if (@$id != "") {
+    echo "<script>
+      var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
+      document.onreadystatechange = function () {
+        myModal.show();
+      };
+    </script>";
+  } 
+?>
+
 @endsection
