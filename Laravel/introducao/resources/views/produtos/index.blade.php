@@ -17,12 +17,12 @@ if (!isset($id)) {
     <a href="{{route('produtos.inserir')}}" type="button" class="mt-4 mb-4 btn btn-primary">Inserir Produto</a>
 <table>
 <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Valor</th>
-                <th>Estoque</th>
-                <th>Ação</th>
-            </tr>
+        <tr>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Estoque</th>
+            <th>Ação</th>
+        </tr>
         </thead>
         <tbody>
         @foreach($produtos as $produto)
