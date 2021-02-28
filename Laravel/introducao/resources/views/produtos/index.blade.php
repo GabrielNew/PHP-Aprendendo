@@ -1,6 +1,13 @@
 @extends('layouts.template')
 @section('title','Produtos')
 @section('content')
+
+<?php
+if (!isset($id)) {
+    $id = "";
+} 
+?>
+
 <div class="container">
 <div class="card shadow mb-4">
 
@@ -26,7 +33,7 @@
                 <td>
                     <a title="Detalhes" href="{{route('produtos.descricao', $produto->id)}}"><i class="fas fa-eye text-primary mr-1"></i></a>
                     <a title="Editar" href="{{route('produtos.edit', $produto)}}"><i class="fas fa-edit text-info mr-1"></i></a>
-                    <a data-toggle="modal" data-target="#exampleModal" title="Excluir"  href=""><i class="fas fa-trash text-danger mr-1"></i></a>
+                    <a title="Excluir"  href="{{route('produtos.modal', $produto)}}"><i class="fas fa-trash text-danger mr-1"></i></a>
                 </td>
             </tr>
         @endforeach
@@ -58,7 +65,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <form action="{{route('produtos.delete', $produto)}}" method="post">
+            <form action="{{route('produtos.delete', $id)}}" method="post">
                 @method('delete')
                 @csrf
                 <button type="submit" class="btn btn-danger">Excluir</button>

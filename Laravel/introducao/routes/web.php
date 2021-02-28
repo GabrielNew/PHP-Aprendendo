@@ -20,4 +20,6 @@ Route::get('produtos/{produto}/edit', [ProdutosController::class, 'edit'])->name
 
 Route::put('produtos/{produto}',[ProdutosController::class, 'editar'])->name('produtos.editar');
 
+Route::get('produtos/{produto}/delete', [ProdutosController::class, 'modal'])->name('produtos.modal');
+
 Route::delete('produtos/{produto}',[ProdutosController::class, 'delete'])->name('produtos.delete');

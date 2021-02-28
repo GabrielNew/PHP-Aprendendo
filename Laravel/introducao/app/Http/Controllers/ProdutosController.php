@@ -45,7 +45,13 @@ class ProdutosController extends Controller {
     }
 
     public function delete(produto $produto){
-        return 'teste';
+        $produto->delete();
+        return redirect()->route('produtos');
+    }
+
+    public function modal($id){
+        $produtos = produto::orderby('id','desc')->paginate();
+        return view('produtos.index',['produtos'=> $produtos, 'id' => $id]);
     }
 
     // public function show($nome, $preco = null){
