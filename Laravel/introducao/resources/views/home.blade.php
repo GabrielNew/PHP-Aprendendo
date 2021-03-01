@@ -17,7 +17,8 @@
   <div id="formContent">
 
     <!-- Login Form -->
-    <form>
+    <form action="{{route('usuarios.login')}}" method="post">
+        @csrf
       <input type="email" id="login" class="fadeIn second" name="email" placeholder="email">
       <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
       <input type="submit" class="fadeIn fourth" value="Log In">
