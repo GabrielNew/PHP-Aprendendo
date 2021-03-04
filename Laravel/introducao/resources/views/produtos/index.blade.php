@@ -3,8 +3,10 @@
 @section('content')
 
 <?php
+@session_start();
 if (!isset($id)) {
     $id = "";
+    echo $_SESSION['nome_usuario'];
 } 
 ?>
 

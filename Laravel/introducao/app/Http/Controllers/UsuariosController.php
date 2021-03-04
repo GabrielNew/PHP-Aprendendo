@@ -13,16 +13,17 @@ class UsuariosController extends Controller
         $senha = $request->password;
         
         $usuarios = usuario::where('email','=',$email)->where('senha','=',$senha)->first();
-        return $usuarios;
-        /*if ($usuarios > 0) {
+        if (@$usuarios->id != null) {
             @session_start();
-            $_SESSION['id_usario'] = $usuarios->id;
-            return $_SESSION['id_usario'];
-            // $produtos = produto::orderby('id','desc')->paginate();
-            // return view('produtos.index',['produtos'=> $produtos]);
+            $_SESSION['id_usuario'] = $usuarios->id;
+            $_SESSION['nome_usuario'] = $usuarios->nome;
+            $_SESSION['nivel_usuario'] = $usuarios->nivel;
+            
+            $produtos = produto::orderby('id','desc')->paginate();
+            return view('produtos.index',['produtos'=> $produtos]);
         } else {
             echo "<script language='javascript'> window.alert('Dados Incorretos')</script>";
             return view('home');
-        }*/
+        }
     }
 }
