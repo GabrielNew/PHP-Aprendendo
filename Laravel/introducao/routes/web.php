@@ -25,4 +25,6 @@ Route::get('produtos/{produto}/delete', [ProdutosController::class, 'modal'])->n
 
 Route::delete('produtos/{produto}',[ProdutosController::class, 'delete'])->name('produtos.delete');
 
-Route::post('produtos',[UsuariosController::class, 'login'])->name('usuarios.login');
+Route::post('painel',[UsuariosController::class, 'login'])->name('usuarios.login');
+
+Route::get('/', [UsuariosController::class, 'logout'])->name('usuarios.logout');

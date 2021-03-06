@@ -4,9 +4,11 @@
 
 <?php
 @session_start();
+if (@$_SESSION['id_usuario']==null) {
+    echo "<script language='javascript'> window.location='./'</script>";
+}
 if (!isset($id)) {
     $id = "";
-    echo $_SESSION['nome_usuario'];
 } 
 ?>
 

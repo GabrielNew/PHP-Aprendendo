@@ -29,6 +29,26 @@
         <li class="nav-item">
           <a class="nav-link" href="usuarios">Usuários</a>
         </li>
+          <?php 
+          @session_start();
+          if(@$_SESSION['id_usuario'] == null) {?>
+            <li class="nav-item">
+              <a class="nav-link" href="usuarios">login</a>
+            </li>
+        <?php } else {?>
+
+        
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Logout
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#"><?php echo @$_SESSION['nome_usuario'];?></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{{route('usuarios.logout')}}">Sair</a>
+        </div>
+      </li>
+      <?php }?>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
