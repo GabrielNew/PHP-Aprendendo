@@ -1,1 +1,1 @@
-Aprendendo Laravel 8
+Aprendendo Laravel 8, projeto apenas para fins de testes
